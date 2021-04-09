@@ -62,13 +62,10 @@ ___
     - Conclude results
         
 ### Hypothesis
-- The stuctures age effects log error because a homes age may make someone think that it is of lower quality but it may have been refurbished causeing a under valued home.
-- Latitude and Longitude are drivers of log error because regions may be a higher priced area versus another.
-- A homes quality is probably effecctiing logerror because homes with a lower quality may be being priced way undervalued.
-- Tax vlaues may be affecting logerror because not all home prices are directly correlated to tax values. Although it is affects the price it does not lead to an exact number.
+
 
 ### Target variable
-- logerror
+- state (if the project was a fail or success)
 
 </details>
 
