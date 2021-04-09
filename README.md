@@ -4,7 +4,7 @@ This is a repo for my individual project over the Kick Starter dataset. I will b
 Kick Starter Project
 
 # <a name="top"></a> Kick Starter Project - README.md
-![Zillow Logo](kick_starter_project/Screen Shot 2021-04-09 at 11.42.24 AM.png)
+![Zillow Logo](https://github.com/ljackson707/kick_starter_project/raw/main/Screen%20Shot%202021-04-09%20at%2011.42.24%20AM.png)
 ​
 ***
 [[Project Description](#project_description)]
