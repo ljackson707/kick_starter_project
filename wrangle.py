@@ -57,7 +57,7 @@ def rename_columns(df):
 #======================================================================================
 
 def remove_columns(df):  
-    df = df.drop(columns=['pledged', 'usd pledged', 'ID', 'name'])
+    df = df.drop(columns=['pledged', 'usd pledged', 'ID', 'name', 'category'])
     df.drop(df.index[df['state'] == 'canceled'], inplace = True)
     df.drop(df.index[df['state'] == 'live'], inplace = True)
     df.drop(df.index[df['state'] == 'suspended'], inplace = True)
@@ -126,3 +126,4 @@ def scale_my_data(train, validate, test):
     return train_scaled, validate_scaled, test_scaled
 
 #======================================================================================
+
