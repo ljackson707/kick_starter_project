@@ -163,6 +163,7 @@ def turn_to_time(df):
     df1.columns=['number_of_days']
     df.reset_index(drop = True)
     df = df.join(df1, how="inner")
+    df = df.drop(columns = ['deadline', 'launched'])
     return df
 
 #======================================================================================
