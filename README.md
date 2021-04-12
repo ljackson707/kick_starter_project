@@ -134,21 +134,6 @@ Be evaluated through peer review on Monday.
 - Cat 14 and Cat 15 - (Journalism and Dance) are the least popular categorys with Journalism having terible success/fail ratio. Dance has a good success/fail ratio but not as popular.
 -----------------------------------------------------------------------
 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
 ### Stats
     
 - Stat Test backers and state_successful: 
@@ -320,50 +305,50 @@ Be evaluated through peer review on Monday.
 | ------------ | ------------- |
 ### For Wrangle:
 | ------------ | ------------- |
-| missing_zero_values_table | This function will look at any data set and report back on zeros and nulls for every column while also giving percentages of total values and also the data types. The message prints out the shape of the data frame and also tells you how many columns have nulls |
-| handle_missing_values | This function drops all null values within a column and row. The Threshold is determined by prop_required_column and prop_required_row arguments. |
-| remove_columns | This function removes unwanted columns from df, returns new df |
-| data_prep | combines the remove_columns and handle_missing_values functions |
-| train_validate_test_split | This function takes in a dataframe, the target feature as a string, and a seed interger and returns split data: train, validate, test, X_train, y_train, X_validate, y_validate, X_test, y_test |
-| scale_my_data(train, validate, test) | This function takes in 3 dataframes with the same columns, and fits a min-max scaler to the first dataframe and transforms all 3 dataframes using that scaler. It returns 3 dataframes with the same column names and scaled values. 
-| get_dummies | This fucntion takes in a dataframe and dummifies specific coloumns and returns a df. |
-| turn_to_time | This fucntion takes in a dataframe and changes specified columns to datetime formate for easily manipulation, THen it resets the index and joins new datetime onto original df while droping old datetime, returning a dataframe. |
-| handle_outliers_backers | This fucntion takes in a dataframe and handles any outliers for the specified column using the IQR rule. |
-| handle_outliers_usd_pledged_real | This fucntion takes in a dataframe and handles any outliers for the specified column using the IQR rule. |
-| handle_outliers_usd_goal_real | This fucntion takes in a dataframe and handles any outliers for the specified column using the IQR rule. 
+- | missing_zero_values_table | This function will look at any data set and report back on zeros and nulls for every column while also giving percentages of total values and also the data types. The message prints out the shape of the data frame and also tells you how many columns have nulls |
+- | handle_missing_values | This function drops all null values within a column and row. The Threshold is determined by prop_required_column and prop_required_row arguments. |
+- | remove_columns | This function removes unwanted columns from df, returns new df |
+- | data_prep | combines the remove_columns and handle_missing_values functions |
+- | train_validate_test_split | This function takes in a dataframe, the target feature as a string, and a seed interger and returns split data: train, validate, test, X_train, y_train, X_validate, y_validate, X_test, y_test |
+- | scale_my_data(train, validate, test) | This function takes in 3 dataframes with the same columns, and fits a min-max scaler to the first dataframe and transforms all 3 dataframes using that scaler. It returns 3 dataframes with the same column names and scaled values. 
+- | get_dummies | This fucntion takes in a dataframe and dummifies specific coloumns and returns a df. |
+- | turn_to_time | This fucntion takes in a dataframe and changes specified columns to datetime formate for easily manipulation, THen it resets the index and joins new datetime onto original df while droping old datetime, returning a dataframe. |
+- | handle_outliers_backers | This fucntion takes in a dataframe and handles any outliers for the specified column using the IQR rule. |
+- | handle_outliers_usd_pledged_real | This fucntion takes in a dataframe and handles any outliers for the specified column using the IQR rule. |
+- | handle_outliers_usd_goal_real | This fucntion takes in a dataframe and handles any outliers for the specified column using the IQR rule. 
     
 | ------------ | ------------- |
 ### For Explore:
 | ------------ | ------------- |
-| explore_univariate_categorical | Takes in a dataframe and a categorical variable and returns a frequency table and barplot of the frequencies. |
-| explore_univariate_quant | takes in a dataframe and a quantitative variable and returns descriptive stats table, histogram, and boxplot of the distributions. |
-| freq_table | for a given categorical variable, compute the frequency count and percent split and return a dataframe of those values along with the different values of column. |
-| explore_bivariate_categorical | takes in categorical variable and binary target variable, returns a crosstab of frequencies, runs a chi-square test for the proportions, and creates a barplot, adding a horizontal line of the overall rate of the target. |
-| explore_bivariate_quant | descriptive stats by each target class. compare means across 2 target groups boxenplot of target x quant swarmplot of target x quant |
-| plot_swarm | Takes in train and target with quant vars and plots swarm plot |
-| plot_boxen | Takes in train and target with quant vars and plots boxen plot |
-| plot_all_continuous_vars |  Melt the dataset to "long-form" representation boxenplot of measurement x value with color representing target. |
+- | explore_univariate_categorical | Takes in a dataframe and a categorical variable and returns a frequency table and barplot of the frequencies. |
+- | explore_univariate_quant | takes in a dataframe and a quantitative variable and returns descriptive stats table, histogram, and boxplot of the distributions. |
+- | freq_table | for a given categorical variable, compute the frequency count and percent split and return a dataframe of those values along with the different values of column. |
+- | explore_bivariate_categorical | takes in categorical variable and binary target variable, returns a crosstab of frequencies, runs a chi-square test for the proportions, and creates a barplot, adding a horizontal line of the overall rate of the target. |
+- | explore_bivariate_quant | descriptive stats by each target class. compare means across 2 target groups boxenplot of target x quant swarmplot of target x quant |
+- | plot_swarm | Takes in train and target with quant vars and plots swarm plot |
+- | plot_boxen | Takes in train and target with quant vars and plots boxen plot |
+- | plot_all_continuous_vars |  Melt the dataset to "long-form" representation boxenplot of measurement x value with color representing target. |
 
 | ------------ | ------------- |
 ### For Stats:
 | ------------ | ------------- |
-| t_test | This function takes in 2 populations, and an alpha confidence level and outputs the results of a t-test. 
+- | t_test | This function takes in 2 populations, and an alpha confidence level and outputs the results of a t-test. 
 
-Parameters:
-- population_1: A series that is a subgroup of the total population. 
-- population_2: When sample = 1, population_2 must be a series that is the total population; when sample = 2,  population_2 can be another subgroup of the same population
-- alpha: alpha = 1 - confidence level, 
-- sample: {1 or 2}, default = 1, functions performs 1 or 2 sample t-test.
-- tail: {1 or 2}, default = 2, Need to be used in conjuction with tail_dir. performs a 1 or 2 sample t-test. 
-- tail_dir: {'higher' or 'lower'}, defaul = higher. |
-| chi2 | This function takes in a df, variable, a target variable, and the alpha, and runs a chi squared test. Statistical analysis is printed in the output. |  
+    # Parameters:
+    - population_1: A series that is a subgroup of the total population. 
+    - population_2: When sample = 1, population_2 must be a series that is the total population; when sample = 2,  population_2 can be another subgroup of the same population
+    - alpha: alpha = 1 - confidence level, 
+    - sample: {1 or 2}, default = 1, functions performs 1 or 2 sample t-test.
+    - tail: {1 or 2}, default = 2, Need to be used in conjuction with tail_dir. performs a 1 or 2 sample t-test. 
+    - tail_dir: {'higher' or 'lower'}, defaul = higher. |
+    | chi2 | This function takes in a df, variable, a target variable, and the alpha, and runs a chi squared test. Statistical analysis is printed in the output. |  
 
 | ------------ | ------------- |
 ### For Modeling:
 | ------------ | ------------- |
-| logit_model | This function takes in train, y_train, validate, and y_validate, fits train and y_train on the logit model, predicts on train, and views raw probabilities (output from the model) (gives proabilities for each observation), while also producing a datframe with each features log_coeffs |
-| knn_model | This function takes in X_train, y_train, X_validate, y_validate, X_test, y_test, fits train and y_train on the knn model, predicts, and uses the model on the validate/out of sample data. Lastly this function produces a vizualization that shows the accuracy in realtion to the level of k|
-| bootstrap_model | This function takes in X_train, y_train, X_validate, y_validate, fits train and y_train on the RandomForrestClassifier model, fits X_train and y_train on the rf model, predicts on train, and views raw probabilities (output from the model) (gives proabilities for each observation), then evaluates model on X_validate sample and gernates a confusion matrix.  |
+- | logit_model | This function takes in train, y_train, validate, and y_validate, fits train and y_train on the logit model, predicts on train, and views raw probabilities (output from the model) (gives proabilities for each observation), while also producing a datframe with each features log_coeffs |
+- | knn_model | This function takes in X_train, y_train, X_validate, y_validate, X_test, y_test, fits train and y_train on the knn model, predicts, and uses the model on the validate/out of sample data. Lastly this function produces a vizualization that shows the accuracy in realtion to the level of k|
+- | bootstrap_model | This function takes in X_train, y_train, X_validate, y_validate, fits train and y_train on the RandomForrestClassifier model, fits X_train and y_train on the rf model, predicts on train, and views raw probabilities (output from the model) (gives proabilities for each observation), then evaluates model on X_validate sample and gernates a confusion matrix.  |
 
 </details>    
 
