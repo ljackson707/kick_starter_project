@@ -201,7 +201,6 @@ Be evaluated through peer review on Monday.
 
 ### Prepare Data
 - To clean the data I had to:
-    -  
     - Drop NULL values
     - Encode features
     - Create new features
@@ -295,119 +294,86 @@ Parameters:
 
 ### Stats Test 1:
 - What is the test?
-    
+  - T-test  
 - Why use this test?
-    
+  - I want to look at two populations of data with a confidence level of 95  
 - What is being compared?
-    
+  - backers and state_successful
+
 #### Hypothesis:
 - The null hypothesis (H<sub>0</sub>) is...
-   
+  - HO: There is no relationship between backers and state_successful
 - The alternate hypothesis (H<sub>1</sub>) is ...
+  - HA: There is a relationship between backers and state_successful
 
 #### Confidence level and alpha value:
 - I established a 95% confidence level
 - alpha = 1 - confidence, therefore alpha is 0.05
 
 #### Results:
-- 
+- Because the p-value: 0.0 is less than the alpha: 0.05, we can reject the null hypothesis
 
 - Summary:
-    - F score of:
-        - 
+    - t-stat score of:
+        - 242.3599
     - P vlaue of:
-        - 
+        - 0.0
 
 ### Stats Test 2: 
 - What is the test?
-    
+  - T-test  
 - Why use this test?
-
+  - I want to look at two populations of data with a confidence level of 95  
 - What is being compared?
-    
+  - usd_pledged_real and state_successful
+
 #### Hypothesis:
 - The null hypothesis (H<sub>0</sub>) is...
-   
+  - HO: There is no relationship between usd_pledged_real and state_successful
 - The alternate hypothesis (H<sub>1</sub>) is ...
+  - HA: There is a relationship between usd_pledged_real and state_successful
 
 #### Confidence level and alpha value:
 - I established a 95% confidence level
 - alpha = 1 - confidence, therefore alpha is 0.05
 
 #### Results:
--
+- Because the p-value: 0.0 is less than the alpha: 0.05, we can reject the null hypothesis
     
 - Summary:
-    - F score of:
-        - 
+    - t-stat score of:
+        - 237.4207
     - P vlaue of:
-        - 
+        - 0.0
  
 ### Stats Test 3:
 - What is the test?
-
+  - T-test
 - Why use this test?
-
+  - I want to look at two populations of data with a confidence level of 95  
 - What is being compared?
+  - usd_goal_real and state_successful
 
 #### Hypothesis:
 - The null hypothesis (H<sub>0</sub>) is...
-   
+  - HO: There is no relationship between usd_goal_real and state_successful
 - The alternate hypothesis (H<sub>1</sub>) is ...
-   
-#### Confidence level and alpha value:
-- I established a 95% confidence level
-- alpha = 1 - confidence, therefore alpha is 0.05
-
-#### Results:
-- 
-
-- Summary:
-    - F score of:
-        - 5.3376
-    - P vlaue of:
-        - 6.587e-05
-
-### Stats Test 4: 
-- What is the test?
-    - T Test
-- Why use this test?
-    - To find statistical differences between the means of 2 or more clusters
-- What is being compared?
-    - Winning cluster of taxes
-
-#### Results:
- - Homes with low to medium structure tax value and low land tax value affect logerror to some degree.
-    
-
-### Stats Test 5:
-- What is the test?
-    - Anova
-- Why use this test?
-    - Find out if a cluster has significance to the logerror
-- What is being compared?
-    - Latitude, Longitude, and House age
-
-#### Hypothesis:
-- The null hypothesis (H<sub>0</sub>) is...
-    - There is no difference between the log error means of each individual cluster
-- The alternate hypothesis (H<sub>1</sub>) is ...
-    - There is a difference between the log error means of at least one clusters.
-
+  - HA: There is a relationship between usd_goal_real and state_successful
 
 #### Confidence level and alpha value:
 - I established a 95% confidence level
 - alpha = 1 - confidence, therefore alpha is 0.05
 
 #### Results:
-- Reject the null
+- Because the p-value: 0.0 is less than the alpha: 0.05, we can reject the null hypothesis
 
 - Summary:
-    - F score of:
-        - 
+    - t-stat score of:
+        - 290.9375
     - P vlaue of:
-        - 
-    
+        - 0.0
+
+
 </details>    
 
 ## <a name="model"></a>Modeling:
@@ -420,36 +386,38 @@ Summary of modeling choices...
 ### Baseline
 
 - Baseline Results: 
-    - Median In sample = 
-    - Median Out of sample = 
+    - Mode In sample = 0
+    - Mode Out of sample = 0
         
 ### Models and R<sup>2</sup> Values:
 - Will run the following models:
-    - Linear regression OLS Model
-    - Lasso Lars
-    - Tweedie Regressor
-    - Polynomail Degree 2
-    - Ploynomial Degree 3
+    - logit
+    - KNN
+    - bootstrap (RandomForestClassifier)
 
-- Other indicators of model performance
-    - R<sup>2</sup> Baseline Value
-        - 
-    - R<sup>2</sup> OLS Value 
-        - 
-
-
-
-### RMSE using Mean
+### Using logit model:
     
-Train/In-Sample:  
-    
-Validate/Out-of-Sample:  
+Precision: 1.00    
+Recal: 1.00 
+F1-score: 1.00
     
 
-### RMSE using Median
-Train/In-Sample:  
-Validate/Out-of-Sample: 
+### Using KNN model:
 
+Accuracy in sample: 1.00
+Precision: 1.00      
+Recal: 1.00   
+F1-score: 1.00 
+
+Accuracy out of sampele: 1.00
+Precision:1.00     
+Recal: 1.00    
+F1-score: 1.00
+
+# <a name="top"></a> KNN Model - README.md
+![Zillow Logo](https://github.com/ljackson707/kick_starter_project/raw/main/Screen%20Shot%202021-04-12%20at%209.18.52%20AM.png)
+   
+    
 ### RMSE for OLS using LinearRegression
     
 Training/In-Sample: 
@@ -457,7 +425,7 @@ Training/In-Sample:
 Validation/Out-of-Sample: 
     
 
-### RMSE for Lasso + Lars
+### 
     
 Training/In-Sample:
     
