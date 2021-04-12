@@ -40,24 +40,6 @@ def missing_zero_values_table(df):
 
 #======================================================================================
 
-def rename_columns(df):
-    return df.rename(columns={'customerID':'customer_id',
-                                'SeniorCitizen':'senior_citizen',
-                                'Partner':'partner',
-                                'Dependents':'dependents',
-                                'PhoneService':'phone_service',
-                                'MultipleLines':'multiple_lines',
-                                'InternetService':'internet_service',
-                                'OnlineSecurity':'online_security',
-                                'StreamingTV':'streaming_tv',
-                                'StreamingMovies':'streaming_movies',
-                                'Contract':'contract',
-                                'PaperlessBilling':'paperless_billing',
-                                'PaymentMethod':'payment_method',
-                                'MonthlyCharges':'monthly_charges'})
-
-#======================================================================================
-
 def remove_columns(df):  
     df = df.drop(columns=['pledged', 'usd pledged', 'ID', 'name', 'category'])
     df.drop(df.index[df['state'] == 'canceled'], inplace = True)

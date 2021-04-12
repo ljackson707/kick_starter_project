@@ -334,7 +334,7 @@ Be evaluated through peer review on Monday.
 | ------------ | ------------- |
 - | t_test | This function takes in 2 populations, and an alpha confidence level and outputs the results of a t-test. 
 
-    # Parameters:
+    ### Parameters:
     - population_1: A series that is a subgroup of the total population. 
     - population_2: When sample = 1, population_2 must be a series that is the total population; when sample = 2,  population_2 can be another subgroup of the same population
     - alpha: alpha = 1 - confidence level, 
@@ -349,6 +349,35 @@ Be evaluated through peer review on Monday.
 - | logit_model | This function takes in train, y_train, validate, and y_validate, fits train and y_train on the logit model, predicts on train, and views raw probabilities (output from the model) (gives proabilities for each observation), while also producing a datframe with each features log_coeffs |
 - | knn_model | This function takes in X_train, y_train, X_validate, y_validate, X_test, y_test, fits train and y_train on the knn model, predicts, and uses the model on the validate/out of sample data. Lastly this function produces a vizualization that shows the accuracy in realtion to the level of k|
 - | bootstrap_model | This function takes in X_train, y_train, X_validate, y_validate, fits train and y_train on the RandomForrestClassifier model, fits X_train and y_train on the rf model, predicts on train, and views raw probabilities (output from the model) (gives proabilities for each observation), then evaluates model on X_validate sample and gernates a confusion matrix.  |
+    
+| ------------ | ------------- |    
+### Visualizations
+| ------------ | ------------- |
+# <a name="top"></a> Correlation Chart - README.md
+![Zillow Logo](https://github.com/ljackson707/kick_starter_project/raw/main/chart_images/corr_table.png)
+  
+# <a name="top"></a> Usd Goal Real vs Usd Pledge Real - README.md
+![Zillow Logo](https://github.com/ljackson707/kick_starter_project/raw/main/chart_images/usd_g_real_vs_usd_p_real.png)
+
+# <a name="top"></a> Count Usd Goal Real - README.md
+![Zillow Logo](https://github.com/ljackson707/kick_starter_project/raw/main/chart_images/count_usd_goal_real.png)
+
+# <a name="top"></a> Count Backers - README.md
+![Zillow Logo](https://github.com/ljackson707/kick_starter_project/raw/main/chart_images/count_backers.png)
+
+# <a name="top"></a> Count Main Category - README.md
+![Zillow Logo](https://github.com/ljackson707/kick_starter_project/raw/main/chart_images/count_main_category.png)
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
 </details>    
 
