@@ -4,7 +4,7 @@ This is a repo for my individual project over the Kick Starter dataset. I will b
 Kick Starter Project
 
 # <a name="top"></a> Kick Starter Project - README.md
-![Zillow Logo](https://github.com/ljackson707/kick_starter_project/raw/main/Screen%20Shot%202021-04-09%20at%2011.42.24%20AM.png)
+![Zillow Logo](https://github.com/ljackson707/kick_starter_project/raw/main/chart_images/kickstarter_logo.png)
 ​
 ***
 [[Project Description](#project_description)]
@@ -81,24 +81,99 @@ Be evaluated through peer review on Monday.
   <summary>Click to expand!</summary>
 
 ### Explore:
-- We learned:
+
+# <a name="top"></a> Correlation Chart - README.md
+![Zillow Logo](https://github.com/ljackson707/kick_starter_project/raw/main/chart_images/corr_table.png)
+
+# Findings:
+-----------------------------------------------------------------------
+- I found that the highest contriubter to the success of a project is the number of backers and pledged usd.
+- I want to know how to predict how many backers or the amount of pledged money you will get
+- What feature influences the backers or the ammount spent twords a project?
+-----------------------------------------------------------------------
+- I also found that the there is a slight negative correlation tied to usd_goal_real and state_success. This means that as the goal of projects increase there is a negative impact twords the overall success of the project. 
+- From this we could look at where the 'sweet spot' for goal ammounts to increase the liklyhood of getting funded and being successful.
+-----------------------------------------------------------------------
+
+# <a name="top"></a> Usd Goal Real vs Usd Pledge Real - README.md
+![Zillow Logo](https://github.com/ljackson707/kick_starter_project/raw/main/chart_images/usd_g_real_vs_usd_p_real.png)
+
+# Findings:
+-----------------------------------------------------------------------
+- I discovered that goal amount has a negative impact on the success of the project. I found that the majority of succeful projects lied between 10 and roughly 8000 dollar range. 
+- I have determined to better ones chances at having a successful project they would need to set their project goal at around 5000 dollars.
+- This feature does not determin you success on its own, I need to look at the main category as well as tyhe number of backers to see if these features can be accurate identifiers for project success. 
+-----------------------------------------------------------------------
+
+# <a name="top"></a> Count Usd Goal Real - README.md
+![Zillow Logo](https://github.com/ljackson707/kick_starter_project/raw/main/chart_images/count_usd_goal_real.png)
+
+# Findings:
+-----------------------------------------------------------------------
+- From this graph we can see that there is a sharp cut off at around 8000 dollars when projects go from having the posibility of being successful to not.
+- I also saw a significant spike in projects that are success full in the 5000 dollar range.
+- The majority of projects that are successful percentage wise are those between 1000 and 3000 dollar range.     
+-----------------------------------------------------------------------
+    
+# <a name="top"></a> Count Backers - README.md
+![Zillow Logo](https://github.com/ljackson707/kick_starter_project/raw/main/chart_images/count_backers.png)
+
+# Findings:
+-----------------------------------------------------------------------
+- The majority of projects that hade 25 > greater backers where more successful.
+-----------------------------------------------------------------------
+    
+# <a name="top"></a> Count Main Category - README.md
+![Zillow Logo](https://github.com/ljackson707/kick_starter_project/raw/main/chart_images/count_main_category.png)
+
+# Findings:
+-----------------------------------------------------------------------
+- Cat 1 - (film_video) is the most popular propject on the kickstarter website, Their success/fail ratio is average.
+- Cat 2 - (Music) is the most successful and secound most popular catagory.
+- Cat 5 - (Technology) is the least has the worst success to fail ratio.
+- Cat 14 and Cat 15 - (Journalism and Dance) are the least popular categorys with Journalism having terible success/fail ratio. Dance has a good success/fail ratio but not as popular.
+-----------------------------------------------------------------------
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
 ### Stats
-- Stat Test: 
-    - **Anova Test**:
-        - Showed that there was a difference between log error of at least one of the n cluster created.
+    
+- Stat Test backers and state_successful: 
     - **T-Testing**:
-        - Showed 
-- Stats test:
-    - **Anova Test**:
-        - Shows that there is a difference between the log error of at least one of the n clusters created.
+        - HO: There is no relationship between backers and state_successful
+        - HA: There is a relationship between backers and state_successful
+        - t-stat: 242.3599
+        - p-value: 0.0
+        - Result: Because the p-value: 0.0 is less than the alpha: 0.05, we can reject the null hypothesis
+  
+- Stats test usd_pledged_real and state_successful:
     - **T-Testing**:
-        - Showed 
-- Stats test: Quality,
-    - **Anova Test**:
-        - Shows that there is a difference between the log error of at least one of the n clusters created.
+        - HO: There is no relationship between usd_pledged_real and state_successful
+        - HA: There is a relationship between usd_pledged_real and state_successful
+        - t-stat: 237.4207
+        - p-value: 0.0
+        - Result: Because the p-value: 0.0 is less than the alpha: 0.05, we can reject the null hypothesis
+
+- Stats test usd_goal_real and state_successful:
     - **T-Testing**:
-        - Showed
+        - HO: There is no relationship between usd_goal_real and state_successful
+        - HA: There is a relationship between usd_goal_real and state_successful
+        - t-stat: 290.9375
+        - p-value: 0.0
+        - Result: Because the p-value: 0.0 is less than the alpha: 0.05, we can reject the null hypothesis
 
 ### Modeling:
 
@@ -247,11 +322,16 @@ Be evaluated through peer review on Monday.
 | ------------ | ------------- |
 | missing_zero_values_table | This function will look at any data set and report back on zeros and nulls for every column while also giving percentages of total values and also the data types. The message prints out the shape of the data frame and also tells you how many columns have nulls |
 | handle_missing_values | This function drops all null values within a column and row. The Threshold is determined by prop_required_column and prop_required_row arguments. |
-| rename_columns | This fucntion renames specific columns with  a specified name. |
 | remove_columns | This function removes unwanted columns from df, returns new df |
 | data_prep | combines the remove_columns and handle_missing_values functions |
 | train_validate_test_split | This function takes in a dataframe, the target feature as a string, and a seed interger and returns split data: train, validate, test, X_train, y_train, X_validate, y_validate, X_test, y_test |
 | scale_my_data(train, validate, test) | This function takes in 3 dataframes with the same columns, and fits a min-max scaler to the first dataframe and transforms all 3 dataframes using that scaler. It returns 3 dataframes with the same column names and scaled values. 
+| get_dummies | This fucntion takes in a dataframe and dummifies specific coloumns and returns a df. |
+| turn_to_time | This fucntion takes in a dataframe and changes specified columns to datetime formate for easily manipulation, THen it resets the index and joins new datetime onto original df while droping old datetime, returning a dataframe. |
+| handle_outliers_backers | This fucntion takes in a dataframe and handles any outliers for the specified column using the IQR rule. |
+| handle_outliers_usd_pledged_real | This fucntion takes in a dataframe and handles any outliers for the specified column using the IQR rule. |
+| handle_outliers_usd_goal_real | This fucntion takes in a dataframe and handles any outliers for the specified column using the IQR rule. 
+    
 | ------------ | ------------- |
 ### For Explore:
 | ------------ | ------------- |
@@ -263,6 +343,7 @@ Be evaluated through peer review on Monday.
 | plot_swarm | Takes in train and target with quant vars and plots swarm plot |
 | plot_boxen | Takes in train and target with quant vars and plots boxen plot |
 | plot_all_continuous_vars |  Melt the dataset to "long-form" representation boxenplot of measurement x value with color representing target. |
+
 | ------------ | ------------- |
 ### For Stats:
 | ------------ | ------------- |
@@ -276,14 +357,14 @@ Parameters:
 - tail: {1 or 2}, default = 2, Need to be used in conjuction with tail_dir. performs a 1 or 2 sample t-test. 
 - tail_dir: {'higher' or 'lower'}, defaul = higher. |
 | chi2 | This function takes in a df, variable, a target variable, and the alpha, and runs a chi squared test. Statistical analysis is printed in the output. |  
+
 | ------------ | ------------- |
 ### For Modeling:
 | ------------ | ------------- |
-| viz_kickstarter | Takes in train and kmeans and produces centroids for each cluster, plots multiple scatter subplots shwoing each defined cluster |
-| OLS_Model | Takes in X_train, y_train, X_validate, y_validate, then produces the RMSE for OLS using in sample and oiut of sample data. |
-| ols_actual_vs_predicted | Takes in X_train, y_train, X_validate, y_validate then produces a bar plot that shows the actual and predicted distribution of target variable to determine which model is more accurate. Model to feed in = (OLS, LassoLars, Tweedie, Ploynomial 1 and 2, etc.) |
-| OLS_hist | This function takes in X_train, y_train, X_validate, y_validate and returns subplots that compare the accuracy of each model .|
-    
+| logit_model | This function takes in train, y_train, validate, and y_validate, fits train and y_train on the logit model, predicts on train, and views raw probabilities (output from the model) (gives proabilities for each observation), while also producing a datframe with each features log_coeffs |
+| knn_model | This function takes in X_train, y_train, X_validate, y_validate, X_test, y_test, fits train and y_train on the knn model, predicts, and uses the model on the validate/out of sample data. Lastly this function produces a vizualization that shows the accuracy in realtion to the level of k|
+| bootstrap_model | This function takes in X_train, y_train, X_validate, y_validate, fits train and y_train on the RandomForrestClassifier model, fits X_train and y_train on the rf model, predicts on train, and views raw probabilities (output from the model) (gives proabilities for each observation), then evaluates model on X_validate sample and gernates a confusion matrix.  |
+
 </details>    
 
 ## <a name="stats"></a>Statistical Analysis
@@ -415,70 +496,26 @@ Recal: 1.00
 F1-score: 1.00
 
 # <a name="top"></a> KNN Model - README.md
-![Zillow Logo](https://github.com/ljackson707/kick_starter_project/raw/main/Screen%20Shot%202021-04-12%20at%209.18.52%20AM.png)
+![Zillow Logo](https://github.com/ljackson707/kick_starter_project/raw/main/chart_images/knn_model.png)
    
     
-### RMSE for OLS using LinearRegression
-    
-Training/In-Sample: 
-    
-Validation/Out-of-Sample: 
-    
+### Using bootstrap (RandomForestClassifier)
 
-### 
-    
-Training/In-Sample:
-    
-Validation/Out-of-Sample: 
-    
+Accuracy in sample: 1.00
+Precision: 1.00      
+Recal: 1.00   
+F1-score: 1.00 
 
+Accuracy out of sampele: 1.00
+Precision:1.00     
+Recal: 1.00    
+F1-score: 1.00
     
-### RMSE for GLM using Tweedie, power=0 and alpha=0
+#### Findings
+- Models used with binary target = (logit, KNN, bootstrap models)
+- All three models hade an accuracy of 1.00. 
+- This is highly unlikly to be true, If i get more time I would like to look into why my accuracy is so high and the features it is testing on.
     
-Training/In-Sample: 
-    
-Validation/Out-of-Sample:
-    
-
-    
-### RMSE for Polynomial Model, degrees=2
-    
-Training/In-Sample:
-    
-Validation/Out-of-Sample:
-    
-
-    
-### RMSE for Polynomial Model, degrees=3
-    
-Training/In-Sample: 
-    
-Validation/Out-of-Sample:
-
-
-### Eetc:
-
-## Selecting the Best Model:
-
-### Use Table below as a template for all Modeling results for easy comparison:
-
-| Model | Training/In Sample RMSE | Validation/Out of Sample RMSE | R<sup>2</sup> Value |
-| ---- | ----| ---- | ---- |
-| Baseline | | | |
-| Linear Regression | | | |
-| Tweedie Regressor (GLM) | | | n/a |
-| Lasso Lars | | | n/a |
-| Polynomial Regression D2| | | n/a |
-| Polynomial Regression D3| | | n/a |
-
-- Why did you choose this model?
-    - It was closer to 0 than our baseline.
-
-## Testing the Model
-
-- Model Testing Results
-     - Out-of-Sample Performance:
-
 
 ***
 
@@ -489,23 +526,24 @@ Validation/Out-of-Sample:
 <details>
   <summary>Click to expand!</summary>
 
-We found that only about 9.36% of log error was inaccurate. Meaning that it was below -0.15 or above 0.15 rendering it inaccurate.
+- In conclusion I have deatemrined that there are corrlations between the features backers, usd_pledged_real, usd_goal_real with the target of state_successful.
 
-This gave us a small amount to work with. But in the end we were able to create a model to find certain drivers of the inaccurate log error.
-Our model performed better than the baseline by a decent amount. With a R baseline of ~-0.0046 and our model performing at ~0.000052. Meaning we were able to get closer to 0 than our baseline.
+- I found that there was a negative correlation to the amount usd_goal_real and state_successful. From this I discovered that there was a 'sweet spot' for goals around 5000 dollars.
 
-We found that Ventura, north downtown LA, tax values, home quality, and a homes age affect loerror within their resepective cluster.
+- I also found that the majority of projects that had 25 or greater backers where more successful.
 
-With further time we would like to look further into geographical location and tax values to see if there is a more specific reason for log error.
+- The most successful and most popular categories werre film and music.
 
-We recommend using our OLS model to be used within the field, in order to establish a closer zestimate score to what the selling price may be, in order to service our custoemrs even better.
+- I was able to reject each of my null hypothesises solidifying the fact that there is a relationship between these features.
 
+- Lastly the modeling came out not as I would have thought. I did not expect to have an accuracy of 1.00 which my baseline model accuary was equal to 0. (This is because i was using a binary target variable.
 
-    
+### If I Had More Time
+- I would have looked into using a continious target varible such as backers or usd_pledged_real. Rather than trying to predict projects who will fail or not id like to look at what factors affect the number of backers and the pledge amounts, knowiung that these two features have a relationship with state_sucessful. With this I would be able to utilize stronger models such as the OLS, Tweedie, or LassoLars and find the best one inorder to reproduce these predictions on future kickstarter projects.
 
 </details>  
 
-![Folder Contents](https://github.com/ljackson707/kick_starter_project/raw/main/Screen%20Shot%202021-04-09%20at%2011.42.24%20AM.png)
+![Folder Contents](https://github.com/ljackson707/kick_starter_project/raw/main/chart_images/kickstarter_logo.png)
 
 
 >>>>>>>>>>>>>>>
